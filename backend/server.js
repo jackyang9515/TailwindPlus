@@ -18,9 +18,15 @@ const port = config.PORT;
 app.use(cors());
 app.use(express.json());
 
-app.get("/", (req, res) => {
-     console.log(req)
-     res.send("Hello World!");
+app.get("/", async (req, res) => {
+    await userSchema.find({}, (err, users) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.status(200).json(users);
+        }
+    });
+
 
 });
 
