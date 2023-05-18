@@ -1,0 +1,11 @@
+{
+  "name": "tailwindplus",
+  "version": "1.0.0",
+  "description": "A ride sharing platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jack Yang",
+  "license": "ISC"
+}
