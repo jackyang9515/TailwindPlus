@@ -19,14 +19,15 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", async (req, res) => {
-    await userSchema.find({}, (err, users) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.status(200).json(users);
-        }
+    await db.collection("Cars").insertOne({username: "Jack2", password: "123", email: "jack123@gmail.com"});
+    db.collection("Cars", function(err, collection){
+        collection.find().toArray(function(err, data){
+            console.log(data); // it will print your collection data
+        })
     });
-
+    await userSchema.find().then((data) => {
+        res.send(data);
+    });
 
 });
 

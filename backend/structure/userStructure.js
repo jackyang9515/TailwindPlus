@@ -12,4 +12,4 @@ const UserSchema = new mongoose.Schema({
     email: { type: String, required: [true, "Missing: email is required"] },
 }, {collection: config.CARS_COLLEXCTION});
 
-export default mongoose.model('Users', UserSchema);
+export default mongoose.model('Cars', UserSchema);
